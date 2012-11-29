@@ -1,5 +1,9 @@
 package server;
 
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class FrameSrv extends javax.swing.JFrame {
 
     private FileInterfaceForRessource ressource;
@@ -8,10 +12,10 @@ public class FrameSrv extends javax.swing.JFrame {
         initComponents();
         this.ressource = ressource;
         
-        try {
-            maJTableFileAdministration1.setData(ressource.getAllFile());
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+        try {        
+            maJTableFileAdministration1.setData(ressource.getAllUser());
+        } catch (RemoteException ex) {
+            Logger.getLogger(FrameSrv.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -24,7 +28,7 @@ public class FrameSrv extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        maJTableFileAdministration1 = new server.MaJTableFileAdministration();
+        maJTableFileAdministration1 = new outils.MaJTableUser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +54,6 @@ public class FrameSrv extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private server.MaJTableFileAdministration maJTableFileAdministration1;
+    private outils.MaJTableUser maJTableFileAdministration1;
     // End of variables declaration//GEN-END:variables
 }

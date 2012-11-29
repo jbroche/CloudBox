@@ -72,7 +72,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="server.MaJTableFileAdministration" name="maJTableFileAdministration1">
+    <Component class="MaJTableFile" name="maJTableFileAdministration1">
     </Component>
   </SubComponents>
 </Form>

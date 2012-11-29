@@ -1,23 +1,24 @@
-package server;
+package outils;
 
+import Tools.MaJTable;
+import Tools.MonModele;
+import cloudBox.CloudFile;
 import java.util.Collection;
-import outils.MaJTable;
-import outils.MonModele;
 
-public class MaJTableFileAdministration extends MaJTable<FileSrv> {
+public class MaJTableFile extends MaJTable<CloudFile> {
     
-    private Collection<FileSrv> data;
+    private Collection<CloudFile> data;
     
-    private String[] titres = {"Author", "Name"};
+    private String[] titres = {"Author", "Name File"};
     private String[] methodes = { "getAuthor", "getNameFile"};
 
     private int[] largeurs = {50, 150};
 
-    public MaJTableFileAdministration() {
+    public MaJTableFile() {
         super();
     }
 
-    public MaJTableFileAdministration(Collection<FileSrv> data) {
+    public MaJTableFile(Collection<CloudFile> data) {
         super();
         setData(data);
     }
@@ -32,9 +33,9 @@ public class MaJTableFileAdministration extends MaJTable<FileSrv> {
         }
     }
 
-    public void setData(Collection<FileSrv> col) {
+    public void setData(Collection<CloudFile> col) {
         this.data=col;
-        setModel(new MonModele<FileSrv>(col,titres,methodes));
+        setModel(new MonModele<CloudFile>(col,titres,methodes));
         setColumnWidth(largeurs);
     }
     

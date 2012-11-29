@@ -4,31 +4,30 @@
  */
 package client;
 
+
+import cloudBox.CloudFile;
+import cloudBox.User;
 import java.io.File;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
+import outils.MaJTableFile;
 import server.FileInterfaceForRessource;
-import server.FileSrv;
 
 public class FrameAdmFile extends javax.swing.JFrame {
 
     private FileInterfaceForRessource ressource;
+    private User user;
     
     public FrameAdmFile(FileInterfaceForRessource srv) throws RemoteException {
         initComponents();
         
-        List<FileSrv> listPerso = new ArrayList<FileSrv>();
-        for (FileSrv file : srv.getAllFile()) {
-            if (file.getAuthor().equals("Jimmy")) {
-                listPerso.add(file);
-            }
-        }
+        user = srv.getUser("Jimmy");
+        
+        List<CloudFile> listPerso = user.getListFile();
         
         this.ressource = srv;
         maJTableFileAdministration1.setData(listPerso);
-                
     }
 
     /**
@@ -40,7 +39,7 @@ public class FrameAdmFile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        maJTableFileAdministration1 = new server.MaJTableFileAdministration();
+        maJTableFileAdministration1 = new outils.MaJTableFile();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -98,8 +97,9 @@ public class FrameAdmFile extends javax.swing.JFrame {
         try {
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 file = choiceFile.getSelectedFile();
-                FileSrv fileForSrv = new FileSrv("Jimmy", file.getName());
-                ressource.addFile(fileForSrv);
+                CloudFile newFile = new CloudFile(user, file.getName());
+                user.addFile(newFile);
+                ressource.addFile(user.getName(), newFile);
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -113,6 +113,6 @@ public class FrameAdmFile extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private server.MaJTableFileAdministration maJTableFileAdministration1;
+    private MaJTableFile maJTableFileAdministration1;
     // End of variables declaration//GEN-END:variables
 }

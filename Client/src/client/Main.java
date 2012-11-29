@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         ConnectionDialog<FileInterfaceForRessource> dialog =
                 new ConnectionDialog<FileInterfaceForRessource>(new JFrame(), true);
-        dialog.setNomRessource("Box");
+        dialog.setNomRessource("cloudBox");
         dialog.setVisible(true);
         
         FileInterfaceForRessource ressource = dialog.getRessource();

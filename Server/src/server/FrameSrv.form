@@ -40,7 +40,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="server.MaJTableFileAdministration" name="maJTableFileAdministration1">
+    <Component class="outils.MaJTableUser" name="maJTableFileAdministration1">
     </Component>
   </SubComponents>
 </Form>

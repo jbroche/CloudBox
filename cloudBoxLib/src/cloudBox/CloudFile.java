@@ -2,25 +2,35 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package server;
+package cloudBox;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  *
- * @author user
+ * @author jlzirani
  */
-public class FileSrv implements Serializable {
+public class CloudFile implements Serializable {
     
-    private String author;
+    private User author;
     private String nameFile;
-    
-    public FileSrv(String author, String nameFile) {
+    private Date date;
+
+    public CloudFile(User author, String nameFile) {
         this.author = author;
         this.nameFile = nameFile;
     }
+        
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
     
-    public void setAuthor(String author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
     
@@ -28,12 +38,14 @@ public class FileSrv implements Serializable {
         this.nameFile = nameFile;
     }
     
-    public String getAuthor() {
+    public User getAuthor() {
         return this.author;
     }
     
     public String getNameFile() {
         return this.nameFile;
     }
+    
+
     
 }
