@@ -2,8 +2,8 @@ package client;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import outils.ConnectionDialog;
-import server.FileInterfaceForRessource;
+import Tools.ConnectionDialog;
+import cloudBox.FileInterfaceForRessource;
 import server.Server;
 
 /**

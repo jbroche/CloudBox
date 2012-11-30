@@ -11,8 +11,8 @@ import java.io.File;
 import java.rmi.RemoteException;
 import java.util.List;
 import javax.swing.JFileChooser;
-import outils.MaJTableFile;
-import server.FileInterfaceForRessource;
+import Tools.MaJTableFile;
+import cloudBox.FileInterfaceForRessource;
 
 public class FrameAdmFile extends javax.swing.JFrame {
 
@@ -24,10 +24,9 @@ public class FrameAdmFile extends javax.swing.JFrame {
         
         user = srv.getUser("Jimmy");
         
-        List<CloudFile> listPerso = user.getListFile();
         
         this.ressource = srv;
-        maJTableFileAdministration1.setData(listPerso);
+        maJTableFileAdministration1.setData(user.getListFile());
     }
 
     /**
@@ -39,7 +38,7 @@ public class FrameAdmFile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        maJTableFileAdministration1 = new outils.MaJTableFile();
+        maJTableFileAdministration1 = new Tools.MaJTableFile();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -97,9 +96,11 @@ public class FrameAdmFile extends javax.swing.JFrame {
         try {
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 file = choiceFile.getSelectedFile();
-                CloudFile newFile = new CloudFile(user, file.getName());
+                CloudFile newFile = new CloudFile(user.getName(), file.getName());
                 user.addFile(newFile);
                 ressource.addFile(user.getName(), newFile);
+                maJTableFileAdministration1.setData(user.getListFile());
+                
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

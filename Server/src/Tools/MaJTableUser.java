@@ -1,4 +1,4 @@
-package outils;
+package Tools;
 
 import Tools.MaJTable;
 import Tools.MonModele;
