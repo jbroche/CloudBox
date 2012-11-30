@@ -1,5 +1,6 @@
 package server;
 
+import cloudBox.FileInterfaceForRessource;
 import cloudBox.CloudFile;
 import cloudBox.User;
 import java.rmi.Naming;
@@ -25,9 +26,9 @@ public class Main {
             
             srv.addUser(new User("Jimmy", new Date()));
             srv.addUser(new User("Pfff", new Date()));
-            srv.addFile("Jimmy", new CloudFile(srv.getUser("Jimmy"), "pompom"));
-            srv.addFile("Jimmy", new CloudFile(srv.getUser("Jimmy"), "pompom2"));
-            srv.addFile("Pfff", new CloudFile(srv.getUser("Pfff"), "pompom3"));
+            srv.addFile("Jimmy", new CloudFile("Jimmy", "pompom"));
+            srv.addFile("Jimmy", new CloudFile("Jimmy", "pompom2"));
+            srv.addFile("Pfff", new CloudFile("Pfff", "pompom3"));
             
             Naming.rebind("cloudBox", srv);
             

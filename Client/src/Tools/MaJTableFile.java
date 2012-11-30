@@ -1,4 +1,4 @@
-package outils;
+package Tools;
 
 import Tools.MaJTable;
 import Tools.MonModele;
@@ -10,7 +10,7 @@ public class MaJTableFile extends MaJTable<CloudFile> {
     private Collection<CloudFile> data;
     
     private String[] titres = {"Author", "Name File"};
-    private String[] methodes = { "getAuthor", "getNameFile"};
+    private String[] methodes = { "getOwner", "getNameFile"};
 
     private int[] largeurs = {50, 150};
 
