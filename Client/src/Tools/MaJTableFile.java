@@ -1,7 +1,5 @@
 package Tools;
 
-import Tools.MaJTable;
-import Tools.MonModele;
 import cloudBox.CloudFile;
 import java.util.Collection;
 

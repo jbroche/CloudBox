@@ -5,7 +5,6 @@
 package cloudBox;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  *
@@ -15,19 +14,10 @@ public class CloudFile implements Serializable {
     
     private String owner;
     private String nameFile;
-    private Date date;
 
     public CloudFile(String author, String nameFile) {
         this.owner = author;
         this.nameFile = nameFile;
-    }
-        
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
     
     public void setOwner(String owner)

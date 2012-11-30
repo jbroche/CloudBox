@@ -5,14 +5,13 @@
 package client;
 
 
+import Tools.MaJTableFile;
 import cloudBox.CloudFile;
+import cloudBox.FileInterfaceForRessource;
 import cloudBox.User;
 import java.io.File;
 import java.rmi.RemoteException;
-import java.util.List;
 import javax.swing.JFileChooser;
-import Tools.MaJTableFile;
-import cloudBox.FileInterfaceForRessource;
 
 public class FrameAdmFile extends javax.swing.JFrame {
 
