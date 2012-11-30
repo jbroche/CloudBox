@@ -13,12 +13,12 @@ import java.util.Date;
  */
 public class CloudFile implements Serializable {
     
-    private User author;
+    private String owner;
     private String nameFile;
     private Date date;
 
-    public CloudFile(User author, String nameFile) {
-        this.author = author;
+    public CloudFile(String author, String nameFile) {
+        this.owner = author;
         this.nameFile = nameFile;
     }
         
@@ -30,17 +30,19 @@ public class CloudFile implements Serializable {
         this.date = date;
     }
     
-    public void setAuthor(User author) {
-        this.author = author;
+    public void setOwner(String owner)
+    {
+        this.owner = owner;
     }
     
     public void setNameFile(String nameFile) {
         this.nameFile = nameFile;
     }
     
-    public User getAuthor() {
-        return this.author;
+    public String getOwner() {
+        return this.owner;
     }
+    
     
     public String getNameFile() {
         return this.nameFile;

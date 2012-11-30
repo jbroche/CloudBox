@@ -57,7 +57,6 @@ public class MonModele<T> extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         try {
-            System.out.println("rahh :" +rowIndex + " pff :" + columnIndex);
             T o = data.get(rowIndex);
             Method m = o.getClass().getMethod(methodNames[columnIndex]);
             return m.invoke(o);

@@ -1,5 +1,6 @@
 package server;
 
+import cloudBox.FileInterfaceForRessource;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,7 +29,7 @@ public class FrameSrv extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        maJTableFileAdministration1 = new outils.MaJTableUser();
+        maJTableFileAdministration1 = new Tools.MaJTableUser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +55,6 @@ public class FrameSrv extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private outils.MaJTableUser maJTableFileAdministration1;
+    private Tools.MaJTableUser maJTableFileAdministration1;
     // End of variables declaration//GEN-END:variables
 }

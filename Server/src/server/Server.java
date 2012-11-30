@@ -1,5 +1,6 @@
 package server;
 
+import cloudBox.FileInterfaceForRessource;
 import cloudBox.CloudFile;
 import cloudBox.User;
 import java.rmi.RemoteException;
